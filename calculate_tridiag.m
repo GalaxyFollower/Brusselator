@@ -1,3 +1,6 @@
+% Calculate a tridiagonal matrix of size m x m
+% with low in the lower diagonal, middle in the diagonal
+% and up in the upper diagonal.
 function T = calculate_tridiag (m, low, middle, up)
 	T=zeros(m,m);
 
