@@ -1,6 +1,7 @@
 % Test the eigen values method.
 function T = custom_eig (m)
 	a=2; b=5.45; delt1=0.008; delt2=0.004; L=0.51302;
+  inittime = clock();
 	A = generate_A_matrix(m, a, b, delt1, delt2, L);
 	h = 2 * m;
 	used = zeros(1, h);
@@ -11,8 +12,8 @@ function T = custom_eig (m)
 		ansL = 0;
 		for j= 1:h
 			if ((abs(calculated_eig(i) - EIG(j,j)) < tol) && (used(j) == 0))
-				used(j) = 1;
 				ansL = 1;
+				used(j) = 1;
 				break;
 			endif
 		endfor
@@ -24,6 +25,13 @@ function T = custom_eig (m)
 	endfor
 	if (ansL == 1)
 		disp("test succeded");
+    plot(real(EIG), imag(EIG), '*k')
+    title('Autovalores de la matriz A')
+    xlabel('Reales')
+    ylabel('Imaginarios')
+    totaltime = etime(clock(),inittime);
+    totaltime = totaltime/60;
+    disp(totaltime);
 	endif
 endfunction
 
