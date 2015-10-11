@@ -9,14 +9,20 @@ function [m1,m2,m3] = multiplySparseMatrices(r1,c1,v1,r2,c2,v2)
 		return
 	endif
 
-	while(i<n1+1)
-		for j=1:n1			
+
+	% testMultiplySparseTime (A con m=100)
+	% tf =  0.014328
+	% ans = 0
+	% tf =  33.159
+
+	while(i<n1+1) % fila
+		g=1;
+		for j=1:n1 % columna	
 			row = getRow(r1,c1,v1,i);
-			%disp(row)
-			col = getCol(r2,c2,v2,j);
-			%disp(col)
+			[col,g] = getCol(r2,c2,v2,j,g);
+
 			r = row*col;
-			disp(r)
+			%disp(r)
 			if(r!=0)
 				m1(k)=i;
 				m2(k)=j;
