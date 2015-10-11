@@ -12,4 +12,4 @@ Aeig = eigen_form(m, a, b, delta1, delta2, L)
 
 **Para calcular los autovalores de forma numérica:**
 
-E = custom_eig (A ,s);
+E = custom_eig (A);

@@ -6,7 +6,7 @@ function T = custom_eig (m)
 	A = generate_A_matrix(m, a, b, delt1, delt2, L);
 	h = 2 * m;
 	used = zeros(1, h);
-	calculated_eig = custom_eig(A, m);
+	calculated_eig = custom_eig(A);
 	totaltime = etime(clock(),inittime);
     totaltime = totaltime/60;
     disp(totaltime);
