@@ -3,7 +3,7 @@
 function E = custom_eig (A ,s)
 	i = size(A)(1);
 	E = zeros(1, i);
-	cota = 1e-10; %si la matriz falla en algunos casos aumentar el 10 hasta que funcione, neceista más iteraciones
+	cota = 1e-12; %si la matriz falla en algunos casos aumentar el 10 hasta que funcione, neceista más iteraciones
 
 	while i > 2 
 		[Q, R] = qrhouse2(A);

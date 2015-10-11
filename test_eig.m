@@ -25,10 +25,11 @@ function T = custom_eig (m)
 	endfor
 	if (ansL == 1)
 		disp("test succeded");
-    plot(real(EIG), imag(EIG), '*k')
+    plot(real(EIG), imag(EIG), 'xr')
     title('Autovalores de la matriz A')
     xlabel('Reales')
     ylabel('Imaginarios')
+    hold
     totaltime = etime(clock(),inittime);
     totaltime = totaltime/60;
     disp(totaltime);
