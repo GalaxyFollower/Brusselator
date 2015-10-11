@@ -3,11 +3,11 @@
 % A matrix to descompose 
 
 function [Q,R] = qr(A)
-m = length(A);
+[m, n] = size(A);
 Q = eye(m,m);
 R = A;
 
-for k = 1:m
+for k = 1:n
 	x = R(k:m,k);
 	s = sign(x(1))*norm(x);
 	u = x;
