@@ -1,12 +1,14 @@
 % Calculate the eig values of the A matrix
-% a is the A matrix
+% A is the A matrix
+% cota should be updated depending of the sieze of the matrix.
+
 function E = custom_eig (A ,s)
 	i = size(A)(1);
 	E = zeros(1, i);
-	cota = 1e-10; %si la matriz falla en algunos casos aumentar el 10 hasta que funcione, neceista más iteraciones
+	cota = 1e-12; %si la matriz falla en algunos casos aumentar el 12 hasta que funcione, neceista más iteraciones
 
 	while i > 2 
-		[Q, R] = qrhouse2(A);
+		[Q, R] = qr(A);
 		A = R*Q;
 
 		%Recupero los autovalores de esa matriz
